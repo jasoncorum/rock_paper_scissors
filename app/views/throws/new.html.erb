@@ -1,0 +1,9 @@
+<div class='container'>
+	<h1>Let's Play Rock, Paper, Scissors!</h1>
+	<p>Choose your weapon:</p>
+
+	<p><%= form_tag(throws_path, method: 'post') do %>
+	<%= select_tag "sign", options_from_collection_for_select(@sign, :last, :first) %></p>
+	<p><%= submit_tag('Submit') %></p>
+	<% end %>
+</div>

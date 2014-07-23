@@ -1,0 +1,16 @@
+<div class='container'>
+	<% if @result == 0 %>
+		<h2>You both chose <%= "#{@opponent_show}".downcase %>, so it's a tie.</h2>
+		<p>That's kind of boring.</p>
+		<p><%= image_tag "games/tie.jpg", alt: "Cat in Tie" %></p>
+	<% elsif @result == 1 %>
+		<h2>You win!</h2>
+		<p>Your opponent chose <%= "#{@opponent_show}".downcase %>.</p>
+		<p><%= image_tag "games/winner.gif", alt: "Do the Carlton!" %></p>
+	<% else @result == 2 %>
+		<h2>You lose!</h2>
+		<p>Your opponent chose <%= "#{@opponent_show}".downcase %>.</p>
+		<p><%= image_tag "games/loser.jpg", alt: "Sad Keanu and Panda" %></p>
+	<% end %>
+	<p><%= link_to "Play again?", root_path %></p>
+</div>
